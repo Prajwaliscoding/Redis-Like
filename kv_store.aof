@@ -1,0 +1,3 @@
+{"op": "set", "key": "name", "value": "Prajwal"}
+{"op": "set", "key": "age", "value": "19"}
+{"op": "set", "key": "status", "value": "married"}
