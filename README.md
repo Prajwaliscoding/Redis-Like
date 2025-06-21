@@ -1,4 +1,4 @@
-# Redis-like Key-Value Store Project
+# Redis-like Key-Value Store
 
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen) 
 ![Python](https://img.shields.io/badge/Python-3.7+-blue)
@@ -32,24 +32,26 @@ cd Redis-Like
 
 1. Command Line Interface
 
-   Set a key-value pair:
+> Set a key-value pair:
 ```bash
-python command_line_interface.py --set mykey "my value"
+python command_line_interface.py 
+--set mykey "my value"
 ```
 
-   Get a value by key:
+> Get a value by key:
 ```bash
-python command_line_interface.py --get mykey
+python command_line_interface.py 
+--get mykey
 ```
 
 2. Server Mode
 
-   Start the server:
+> Start the server:
 ```bash
 python server.py
 ```
 
-   Connect to the server using netcat/telnet:
+> Connect to the server using netcat/telnet:
 ```bash
 nc localhost 9999
 ```
@@ -57,13 +59,13 @@ nc localhost 9999
 Server commands:
 
 ```bash
-SET key value - Stores the key-value pair
-GET key - Retrieves the value for the given key
+SET key value               # Stores the key-value pair
+GET key                     # Retrieves the value for the given key
 ```
 
 ## Example session:
 ```bash
-$ nc localhost 9999
+nc localhost 9999
 SET username Prajwal
 OK
 GET username
