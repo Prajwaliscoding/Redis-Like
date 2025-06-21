@@ -16,9 +16,9 @@ A lightweight, Redis-like key-value store implementation with persistence, featu
 ## Architecture
 ```markdown
 Project Structure
-├── key_value_store.py  # Core storage engine with persistence
-├── server.py          # Network server component
-└── command_line_interface.py  # CLI interface
+├── key_value_store.py                   # Core storage engine with persistence
+├── server.py                            # Network server component
+└── command_line_interface.py            # CLI interface
 ```
 
 ## Installation
@@ -34,14 +34,12 @@ cd Redis-Like
 
 > Set a key-value pair:
 ```bash
-python command_line_interface.py 
---set mykey "my value"
+python command_line_interface.py --set mykey "my value"
 ```
 
 > Get a value by key:
 ```bash
-python command_line_interface.py 
---get mykey
+python command_line_interface.py --get mykey
 ```
 
 2. Server Mode
