@@ -14,11 +14,12 @@ A lightweight, Redis-like key-value store implementation with persistence, featu
 - Thread-safe server implementation (one thread per client)
 
 ## Architecture
-
+```markdown
 Project Structure
 ├── key_value_store.py  # Core storage engine with persistence
 ├── server.py          # Network server component
 └── command_line_interface.py  # CLI interface
+```
 
 ## Installation
 
@@ -31,24 +32,24 @@ cd Redis-Like
 
 1. Command Line Interface
 
-Set a key-value pair:
+   Set a key-value pair:
 ```bash
 python command_line_interface.py --set mykey "my value"
 ```
 
-Get a value by key:
+   Get a value by key:
 ```bash
 python command_line_interface.py --get mykey
 ```
 
 2. Server Mode
 
-Start the server:
+   Start the server:
 ```bash
 python server.py
 ```
 
-Connect to the server using netcat/telnet:
+   Connect to the server using netcat/telnet:
 ```bash
 nc localhost 9999
 ```
@@ -93,9 +94,12 @@ GET username
 
 ## Performance Characteristics
 
-Operation	Time Complexity	Notes
-SET	O(1)	Plus disk I/O for persistence
-GET	O(1)	Memory access only
+```markdown
+| Operation  | Time Complexity  | Notes                              |
+|------------|------------------|------------------------------------|
+| SET        | O(1)             | Plus disk I/O for persistence      |
+| GET        | O(1)             | Memory access only                 |
+```
 
 ## Limitations
 
