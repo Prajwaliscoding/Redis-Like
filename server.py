@@ -1,5 +1,6 @@
 import socket
 import json
+import threading
 from key_value_store import KVStore
 
 kv = KVStore()
@@ -32,8 +33,8 @@ def main():
     print("Server is listening...")
     while True:
         conn, addr = s.accept()
-        print("Client added with ",addr)
-        handle_client(conn)
-
+        thread = threading.Thread(target=handle_client, args=[conn])
+        thread.start()
+        
 if __name__=="__main__":
     main()
