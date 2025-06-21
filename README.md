@@ -24,8 +24,8 @@ Project Structure
 ## Installation
 
 ```bash
-git clone https://github.com/Prajwaliscoding/Redis-Like.git
-cd Redis-Like
+git clone https://github.com/Prajwaliscoding/Redis-Like_Key-Value_Store.git
+cd Redis-Like_Key-Value_Store
 ``` 
 
 ## Usage
