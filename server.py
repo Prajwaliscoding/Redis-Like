@@ -14,13 +14,21 @@ def handle_client(conn):
             if not data:
                 break
             try:
-                command = json.loads(data)
-                if command["op"] == "set":
-                    kv.set(command["key"],command["value"])
+                parts = data.split()    
+                if not parts:
+                    continue
+
+                elif parts[0].upper() == "SET" and len(parts) == 3:
+                    kv.set(parts[1],parts[2])
                     conn.sendall(b"OK")
-                elif command["op"] == "get":
-                    value = kv.get(command["key"])
-                    conn.sendall(json.dumps(value).encode())
+                elif parts[0].upper() == "GET" and len(parts) == 2:
+                    result = kv.get(parts[1])
+                    if result is None:
+                        conn.sendall(b"None")
+                    else:
+                        conn.sendall(json.dumps(result).encode())
+                else:
+                    conn.sendall(b"ERROR...Unknown command.")
             except Exception as e:
                 conn.sendall(str(e).encode())
 
